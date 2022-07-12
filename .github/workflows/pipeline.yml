@@ -31,6 +31,7 @@ jobs:
         run: npm run eslint
       - name: test
         run: npm test
+        
   tag_release:
     if: ${{github.event_name == 'push'}}
     needs: [simple_deployment_pipeline]
