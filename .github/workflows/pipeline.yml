@@ -18,6 +18,8 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "desolate-citadel-70017" #Must be unique in Heroku
           heroku_email: "mlee892@ku.edu"
+          healthcheck: "https://desolate-citadel-70017.herokuapp.com/health"
+          checkstring: "ok"
       - name: npm install
         run: npm install
       - name: lint
