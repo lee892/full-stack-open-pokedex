@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [master]
+    types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -19,7 +22,6 @@ jobs:
           heroku_app_name: "desolate-citadel-70017" #Must be unique in Heroku
           heroku_email: "mlee892@ku.edu"
           healthcheck: "https://desolate-citadel-70017.herokuapp.com/health"
-          checkstring: "ok"
           rollbackonhealthcheckfailed: true
       - name: npm install
         run: npm install
