@@ -24,5 +24,3 @@ jobs:
         run: npm run eslint
       - name: test
         run: npm test
-      - name: deploy
-        run: npm 
